@@ -2,13 +2,12 @@
 // The program input for simple_token/src/main.leo
 [mint]
 owner: address = aleo1ht2a9q0gsd38j0se4t9lsfulxgqrens2vgzgry3pkvs93xrrzu8s892zn7;
-amount: u64 = 100u64;
+weight: u64 = 75u64;
 gender: u64 = 1u64;
-[transfer]
-calorie: Calorie = Calorie {
-    owner: aleo1ht2a9q0gsd38j0se4t9lsfulxgqrens2vgzgry3pkvs93xrrzu8s892zn7,
-    amount: 100u64,
-    _nonce: 0group,
-};
-to: address = aleo1mgfq6g40l6zkhsm063n3uhr43qk5e0zsua5aszeq5080dsvlcvxsn0rrau;
-amount: u64 = 50u64;
+age: u64 = 30u64;
+height: u64 = 180u64;
+activity_level: u64 = 1u64;
+dietary_preference: u64 = 1u64;
+health_goal: u64 = 1u64;
+calories_yesterday: u64 = 2000u64;
+todays_training: u64 = 500u64;

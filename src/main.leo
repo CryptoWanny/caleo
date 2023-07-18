@@ -13,7 +13,7 @@ program caleo.aleo {
     // The `mint` function initializes a new record with the
     // specified number of calories assigned to the specified receiver.
 
-transition mint(owner: address, weight: u64, gender: u64, age: u64, height: u64, activity_level: u64, dietary_preference: u64, health_goal: u64, calories_yesterday: u64) -> (Calorie, u64, u64, u64, u64) {
+transition mint(owner: address, weight: u64, gender: u64, age: u64, height: u64, activity_level: u64, dietary_preference: u64, health_goal: u64, calories_yesterday: u64, todays_training: u64) -> (Calorie, u64, u64, u64, u64) {
     // Calculate the individual's basal metabolic rate (BMR)
     let bmr: u64 = 0u64;
     if gender == 0u64 {
@@ -57,7 +57,7 @@ transition mint(owner: address, weight: u64, gender: u64, age: u64, height: u64,
     }
 
     // Calculate the final daily caloric allowance
-    let allowance: u64 = goal_calories - calories_yesterday;
+    let allowance: u64 = goal_calories - calories_yesterday + todays_training;
 
     // Create a new Calorie record with the calculated daily caloric allowance
     let calorie_record: Calorie = Calorie {
@@ -71,30 +71,7 @@ transition mint(owner: address, weight: u64, gender: u64, age: u64, height: u64,
 
 
 
-    // The `transfer` function sends the specified number of calories
-    // to the receiver from the provided calorie record.
-    transition transfer(calorie: Calorie, to: address, amount: u64) -> (Calorie, Calorie) {
-        // Checks the given calorie record has sufficient balance.
-        // This `sub` operation is safe, and the proof will fail
-        // if an overflow occurs.
-        // `difference` holds the change amount to be returned to sender.
-        
-        let difference: u64 = calorie.amount - amount;
-        // Produce a calorie record with the change amount for the sender.
-        let remaining: Calorie = Calorie {
-            owner: calorie.owner,
-            amount: difference,
-        
-        };
-        // Produce a calorie record for the specified receiver.
-        let transferred: Calorie = Calorie {
-            owner: to,
-            amount: amount,
-           
-        };
-        // Output the sender's change record and the receiver's record.
-        return (remaining, transferred);
-    }
+
 
     
   
