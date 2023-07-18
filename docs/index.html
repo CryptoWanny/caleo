@@ -92,75 +92,132 @@
         calculations. These variables include:
       </p>
 
-      - `bmr`: The basal metabolic rate (BMR) of the individual, calculated
-      using their weight, gender, age, and height. - `adjusted_bmr`: The BMR
-      adjusted based on the individual's activity level. - `daily_calories`: The
-      daily caloric needs of the individual, adjusted based on their dietary
-      preference. - `goal_calories`: The daily caloric needs of the individual,
-      adjusted based on their health goal. - `allowance`: The final daily
-      caloric allowance for the individual, calculated by subtracting the
-      calories consumed yesterday from the goal calories and adding today's
-      training. ### Outputs The `mint` function returns a tuple containing five
-      values: 1. A new `Calorie` record with the calculated daily caloric
-      allowance for the specified individual. 2. The calculated BMR of the
-      individual. 3. The adjusted BMR of the individual. 4. The daily caloric
-      needs of the individual. 5. The final daily caloric allowance for the
-      individual. ## Harris-Benedict Equation and Metabolic Rate The
-      Harris-Benedict equation is a formula that calculates an individual's
-      basal metabolic rate (BMR) by taking into account their weight, height,
-      age, and gender. The BMR represents the number of calories that an
-      individual's body needs to perform basic functions at rest, such as
-      breathing, circulating blood, and maintaining hormone levels. Knowing your
-      BMR is important because it helps you determine how many calories you may
-      want to consume based on your goals. Metabolic rate refers to the rate at
-      which an individual's body converts food into energy. It is important
-      because it provides the body with the energy it needs to perform essential
-      functions such as breathing and digestion. An individual's body needs a
-      minimum number of calories to sustain these functions. Factors such as
-      age, sex, muscle mass, and physical activity can affect an individual's
-      metabolic rate or BMR. ## Input File In addition to defining the `mint`
-      function in the `main.leo` file, Caleo also includes an input file named
-      `caleo.in`. This file specifies values for each of the input parameters of
-      the `mint` function. These values are used when running the program to
-      calculate the daily caloric allowance for a specified individual. Here is
-      an example of an input file: Copy // The program input for
-      simple_token/src/main.leo [mint] owner: address =
-      aleo1ht2a9q0gsd38j0se4t9lsfulxgqrens2vgzgry3pkvs93xrrzu8s892zn7; weight:
-      u64 = 75u64; gender: u64 = 1u64; age: u64 = 30u64; height: u64 = 180u64;
-      activity_level: u64 = 1u64; dietary_preference: u64 = 1u64; health_goal:
-      u64 = 1u64; calories_yesterday: u64 = 2000u64; todays_training: u64 =
-      500u64; In this example, values are specified for each of the input
-      parameters of the `mint` function. When running Caleo with this input
-      file, it will calculate a daily caloric allowance for an individual with a
-      weight of 75 kilograms, a gender of female (represented by a value of 1),
-      an age of 30 years, a height of 180 centimeters, an activity level of
-      lightly active (represented by a value of 1), a dietary preference of
-      balanced (represented by a value of 1), a health goal of maintenance
-      (represented by a value of 1), who consumed 2000 calories yesterday and
-      burned 500 calories during today's training. ## Conclusion Caleo is a
-      powerful calorie tracking application that uses Aleo blockchain technology
-      to provide trainers with an easy way to mint daily caloric allowances for
-      their trainees. By using Caleo, trainers can help their trainees achieve
-      their health goals by providing them with accurate and personalized
-      caloric recommendations. With its detailed `mint` function and easy-to-use
-      input file, Caleo is a valuable tool for anyone looking to improve their
-      health and fitness. ## Aleo Blockchain and the Fitness Industry Aleo is a
-      blockchain platform that enables developers to create decentralized
-      applications (dapps) that are private, scalable, and secure. By using Aleo
-      blockchain technology, Caleo is able to provide its users with a
-      transparent and tamper-proof record of their daily caloric allowances.
-      Blockchain technology has the potential to revolutionize the fitness
-      industry by providing individuals with greater control over their personal
-      health data. With blockchain-based fitness applications like Caleo,
-      individuals can securely store and share their health data with trainers
-      and healthcare providers. This can help improve the accuracy and
-      effectiveness of fitness programs by providing trainers with access to
-      up-to-date and reliable information about their clients' health and
-      fitness. In conclusion, Caleo is an innovative calorie tracking
-      application that leverages the power of Aleo blockchain technology to
-      provide its users with accurate and personalized caloric recommendations.
-      By using blockchain technology, Caleo is helping to pave the way for a
-      more transparent and secure future for the fitness industry.
+      <ul>
+        <li>
+          `bmr`: The basal metabolic rate (BMR) of the individual, calculated
+          using their weight, gender, age, and height.
+        </li>
+        <li>
+          `adjusted_bmr`: The BMR adjusted based on the individual's activity
+          level.
+        </li>
+        <li>
+          `daily_calories`: The daily caloric needs of the individual, adjusted
+          based on their dietary preference.
+        </li>
+        <li>
+          `goal_calories`: The daily caloric needs of the individual, adjusted
+          based on their health goal.
+        </li>
+        <li>
+          `allowance`: The final daily caloric allowance for the individual,
+          calculated by subtracting the calories consumed yesterday from the
+          goal calories and adding today's training.
+        </li>
+      </ul>
+
+      <h3>Outputs</h3>
+
+      <p>The `mint` function returns a tuple containing five values:</p>
+
+      <ol type="1">
+        <li>
+          A new `Calorie` record with the calculated daily caloric allowance for
+          the specified individual.
+        </li>
+        <li>The calculated BMR of the individual.</li>
+        <li>The adjusted BMR of the individual.</li>
+        <li>The daily caloric needs of the individual.</li>
+        <li>The final daily caloric allowance for the individual.</li>
+      </ol>
+
+      <h2>Harris-Benedict Equation and Metabolic Rate</h2>
+
+      <p>
+        The Harris-Benedict equation is a formula that calculates an
+        individual's basal metabolic rate (BMR) by taking into account their
+        weight, height, age, and gender. The BMR represents the number of
+        calories that an individual's body needs to perform basic functions at
+        rest, such as breathing, circulating blood, and maintaining hormone
+        levels. Knowing your BMR is important because it helps you determine how
+        many calories you may want to consume based on your goals.
+      </p>
+      <p>
+        Metabolic rate refers to the rate at which an individual's body converts
+        food into energy. It is important because it provides the body with the
+        energy it needs to perform essential functions such as breathing and
+        digestion. An individual's body needs a minimum number of calories to
+        sustain these functions. Factors such as age, sex, muscle mass, and
+        physical activity can affect an individual's metabolic rate or BMR.
+      </p>
+
+      <h2>Input File</h2>
+
+      <p>
+        In addition to defining the `mint` function in the `main.leo` file,
+        Caleo also includes an input file named `caleo.in`. This file specifies
+        values for each of the input parameters of the `mint` function. These
+        values are used when running the program to calculate the daily caloric
+        allowance for a specified individual. Here is an example of an input
+        file:
+      </p>
+
+      <pre>
+// The program input for simple_token/src/main.leo
+[mint]
+owner: address = aleo1ht2a9q0gsd38j0se4t9lsfulxgqrens2vgzgry3pkvs93xrrzu8s892zn7;
+weight: u64 = 75u64;
+gender: u64 = 1u64;
+age: u64 = 30u64;
+height: u64 = 180u64;
+activity_level: u64 = 1u64;
+dietary_preference: u64 = 1u64;
+health_goal: u64 = 1u64;
+calories_yesterday: u64 = 2000u64;
+todays_training: u64 = 500u64;
+</pre
+      >
+
+      <p>
+        In this example, values are specified for each of the input parameters
+        of the `mint` function. When running Caleo with this input file, it will
+        calculate a daily caloric allowance for an individual with a weight of
+        75 kilograms, a gender of female (represented by a value of 1), an age
+        of 30 years, a height of 180 centimeters, an activity level of lightly
+        active (represented by a value of 1), a dietary preference of balanced
+        (represented by a value of 1), a health goal of maintenance (represented
+        by a value of 1), who consumed 2000 calories yesterday and burned 500
+        calories during today's training.
+      </p>
+
+      <h2>Conclusion</h2>
+
+      <p>
+        Caleo is a powerful calorie tracking application that uses Aleo
+        blockchain technology to provide trainers with an easy way to mint daily
+        caloric allowances for their trainees. By using Caleo, trainers can help
+        their trainees achieve their health goals by providing them with
+        accurate and personalized caloric recommendations. With its detailed
+        `mint` function and easy-to-use input file, Caleo is a valuable tool for
+        anyone looking to improve their health and fitness. ## Aleo Blockchain
+        and the Fitness Industry Aleo is a blockchain platform that enables
+        developers to create decentralized applications (dapps) that are
+        private, scalable, and secure. By using Aleo blockchain technology,
+        Caleo is able to provide its users with a transparent and tamper-proof
+        record of their daily caloric allowances. Blockchain technology has the
+        potential to revolutionize the fitness industry by providing individuals
+        with greater control over their personal health data. With
+        blockchain-based fitness applications like Caleo, individuals can
+        securely store and share their health data with trainers and healthcare
+        providers. This can help improve the accuracy and effectiveness of
+        fitness programs by providing trainers with access to up-to-date and
+        reliable information about their clients' health and fitness. In
+        conclusion, Caleo is an innovative calorie tracking application that
+        leverages the power of Aleo blockchain technology to provide its users
+        with accurate and personalized caloric recommendations. By using
+        blockchain technology, Caleo is helping to pave the way for a more
+        transparent and secure future for the fitness industry.
+      </p>
     </div>
   </body>
 </html>
