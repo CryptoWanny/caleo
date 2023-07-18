@@ -1,10 +1,10 @@
 {
-    "program": "caleo.aleo",
-    "version": "0.0.0",
-    "description": "",
-    "development": {
-        "private_key": "APrivateKey1zkpEJFWVk6hZ11XqCpsUH8Bmfd1tgqeJnbc663c5tc8dyRH",
-        "address": "aleo16dt00vk42eqpyv7xj43ju0zl9tzucrqyrf2twh57769jlj89syqs63prv3"
-    },
-    "license": "MIT"
+  "program": "caleo.aleo",
+  "version": "0.0.1",
+  "description": "",
+  "development": {
+    "private_key": "APrivateKey1zkpEJFWVk6hZ11XqCpsUH8Bmfd1tgqeJnbc663c5tc8dyRH",
+    "address": "aleo16dt00vk42eqpyv7xj43ju0zl9tzucrqyrf2twh57769jlj89syqs63prv3"
+  },
+  "license": "MIT"
 }
